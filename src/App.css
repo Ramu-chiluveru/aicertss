@@ -1,38 +1,302 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
+  min-width: 100vw;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body{
+  background-color: black;
+}
+
+.nb-container{
+  z-index: 1;
+  width: 100%;
+  height: 130px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+
+.logo{
+  max-width: 214px;
+  max-height: 30px;
+}
+
+
+.nb-menu{
+  display: flex;
+  gap: 24px;
+}
+
+.nb-container a{
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nb-container a:hover{
+  color: #CFA935;
+  transition: ease-in-out 0.3s;
+}
+
+.btn{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  width: 153px;
+  height: 43px;
+  border-color: transparent ;
+  padding:12px 24px 12px 24px;
+  background-color: #CFA935;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* banners */
+/* src/HeroBanner.css */
+
+.hero-banner {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
+
+.banner {
+  position: relative;
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner img,
+.banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.title span {
+  color: #ffcc00; /* Highlight color */
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.dots {
+  position: absolute;
+  bottom: 150px;
+  right: -350px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+
+.btn-scroll-container{
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: scroll;
+  display: flex;
+  position: relative;
+  top: 500px;
+}
+
+.btn-scroll-container::-webkit-scrollbar{
+  width: 0;
+}
+.btns{
+ min-width: 176px;
+  height: 44px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background-color: #171A24;
+}
+
+.wwd-container{
+  margin-top: 40px;
+  top: 500px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.wwd-container .title{
+  color: white;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wwd-container > p{
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wwd-container .sub{
+  font-size: 16px;
+  color: #ffcc00;
+}
+
+.why-ai-container{
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 1100px;
+  display: flex;
+  gap: 50px;
+}
+
+.q-container{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 500px;
+}
+
+.queries{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.q-container .lite{
+  font-weight: 100;
+}
+.query{
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.overlay img{
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+}
+
+.certificate-container{
+  z-index: -1;
+  width: 100vw;
+  position: absolute;
+  top: 1650px;
+  display: flex;
+}
+
+.certificate-container > div > img{
+  width: 100%;
+  z-index: -1;
+}
+
+
+.certificate-container > div > .content{
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  background: url("./Assets/overlay.svg");
+  width: 100%;
+}
+
+
+.footer-container{
+  width: 100%;
+  position: absolute;
+  top: 2180px;
+  color: #fff;
+  display: flex;
+  padding: 0px 50px;
+  justify-content: space-between;
+}
+
+
+.footer-container > * > *{
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  color: #A9A7B0;
+}
+
+.footer-container > * > h3{
+  color: #fff;
+}
+
+.cp-rights{
+  font-size: 13px;
+  color: #A9A7B0; 
+}
+
+.logo p{
+  font-size: 12px;
+}
+
+.input{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input > input{
+  background-color: transparent;
+  outline-color: transparent;
+  border-color: transparent;
+}
+.col1{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
